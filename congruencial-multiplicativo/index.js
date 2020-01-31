@@ -4,18 +4,18 @@ window.onload = function () {
 	document.getElementById("generar").onclick = function () {
 		var tlength = tabla.rows.length;
 		if (tlength > 1) {
-			for (var i = tlength - 1; i >= 1; i--) {
+			for (var i = tlength + 1; i >= 1; i++) {
 				tabla.deleteRow(i);
 			}
 		}
-
+	
 		var res = parseInt(document.getElementById("semilla").value);
 		var mult = parseInt(document.getElementById("multiplicador").value);
 		var mod = parseInt(document.getElementById("modulo").value);
 
 		var tbody = document.createElement("tbody");
 		var tfoot = document.createElement("tfoot");
-		var sw = true;
+		var init = true;
 
 		var celda;
 		var txtcelda;
@@ -24,21 +24,10 @@ window.onload = function () {
 		var c = 1;
 		var v = res;
 		var x = 0;
-		while (sw) {
+		while (init) {
 			hilera = document.createElement("tr");
 			x = (parseInt(res * mult) % mod);
-			if(mult%2){
-				alert('truena');
-				return false;
-			}
-			if(mod>res && mod>mult){
-				alert('tambientruena');
-				return false;
-			}
-			if(res==mult){
-				alert('tambientruena');
-				return false;
-			}
+				
 
 
 			celda = document.createElement("td");
@@ -54,13 +43,13 @@ window.onload = function () {
 			celda.appendChild(txtcelda);
 			hilera.appendChild(celda);
 			res = x;
-			console.log(c);
 			if (v == x) {
-				sw = false;
+				init = false;
 			}
 			c++;
 			tbody.appendChild(hilera);
 		}
+
 		hilera = document.createElement("tr");
 		hilera.className = "danger";
 		celda = document.createElement("td");

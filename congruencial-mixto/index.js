@@ -17,7 +17,7 @@ window.onload=function()
 
 		var tbody = document.createElement("tbody");
 		var tfoot = document.createElement("tfoot");
-		var sw = true;
+		var init = true;
 
 		var celda;
 		var txtcelda;
@@ -26,7 +26,7 @@ window.onload=function()
 		var c = 1;
 		var v=res;
 		var x=0;
-		while(sw){
+		while(init){
 			hilera = document.createElement("tr");
 			x = (parseInt(res*mult)+parseInt(cons))%mod;	
 			celda = document.createElement("td");
@@ -38,7 +38,6 @@ window.onload=function()
             celda.appendChild(txtcelda);
             hilera.appendChild(celda);
             res = x;
-            console.log(c);
             celda = document.createElement("td");
             txtcelda = document.createTextNode(x);
             celda.appendChild(txtcelda);
@@ -48,7 +47,7 @@ window.onload=function()
             celda.appendChild(txtcelda);				
 			hilera.appendChild(celda);
 			if (v==x){
-					sw=false;
+					init=false;
 			}
 			c++;
 			tbody.appendChild(hilera);		
