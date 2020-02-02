@@ -1,5 +1,24 @@
 
 window.onload = function () {
+	/* Modulo */
+	
+	var min = 200;
+	var max = 300;
+	var modrandom;
+	modrandom = Math.floor(Math.random() * max) + min;
+	document.getElementById('modulo').setAttribute("value", `${modrandom}`)
+
+	/* Modulo */
+
+	/* a */
+
+	var p = [3,11,13,19,21,27,29,37,53,59,61,67,69,77,83,91];
+	var prandom = p[Math.floor(p.length * Math.random())];
+	var a = 200 * Math.floor(Math.random()* 301) - prandom
+	document.getElementById('multiplicador').setAttribute("value", `${a}`)
+
+	/* a */
+
 	var tabla = document.getElementById("tabla");
 	document.getElementById("generar").onclick = function () {
 		var tlength = tabla.rows.length;
@@ -8,7 +27,7 @@ window.onload = function () {
 				tabla.deleteRow(i);
 			}
 		}
-	
+
 		var res = parseInt(document.getElementById("semilla").value);
 		var mult = parseInt(document.getElementById("multiplicador").value);
 		var mod = parseInt(document.getElementById("modulo").value);
@@ -27,7 +46,7 @@ window.onload = function () {
 		while (init) {
 			hilera = document.createElement("tr");
 			x = (parseInt(res * mult) % mod);
-				
+
 
 
 			celda = document.createElement("td");
