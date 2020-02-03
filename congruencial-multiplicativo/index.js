@@ -1,9 +1,20 @@
 
 window.onload = function () {
-	/* Modulo */
+	/* Semilla */
 	
 	var min = 200;
 	var max = 300;
+	var rango = ((max - min) / 2) - 1;
+	var semirandom;
+	semirandom = 2 * Math.floor(Math.random() * rango) +1 +min;
+
+	semilla.setAttribute("value", semirandom);
+
+	/* Semilla */
+
+
+	/* Modulo */
+
 	var modrandom;
 	modrandom = Math.floor(Math.random() * max) + min;
 	document.getElementById('modulo').setAttribute("value", `${modrandom}`)
@@ -12,9 +23,9 @@ window.onload = function () {
 
 	/* a */
 
-	var p = [3,11,13,19,21,27,29,37,53,59,61,67,69,77,83,91];
+	var p = [3, 11, 13, 19, 21, 27, 29, 37, 53, 59, 61, 67, 69, 77, 83, 91];
 	var prandom = p[Math.floor(p.length * Math.random())];
-	var a = 200 * Math.floor(Math.random()* 301) - prandom
+	var a = 200 * Math.floor(Math.random() * 301) - prandom
 	document.getElementById('multiplicador').setAttribute("value", `${a}`)
 
 	/* a */

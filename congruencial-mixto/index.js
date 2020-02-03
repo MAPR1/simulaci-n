@@ -28,7 +28,7 @@ window.onload=function()
 		var x=0;
 		while(init){
 			hilera = document.createElement("tr");
-			x = (parseInt(res*mult)+parseInt(cons))%mod;	
+			x = (parseInt(res*mult)+parseInt(cons))%mod;
 			celda = document.createElement("td");
             txtcelda = document.createTextNode(c);
             celda.appendChild(txtcelda);
@@ -47,7 +47,7 @@ window.onload=function()
             celda.appendChild(txtcelda);				
 			hilera.appendChild(celda);
 			if (v==x){
-					init=false;
+					init=true;
 			}
 			c++;
 			tbody.appendChild(hilera);		
