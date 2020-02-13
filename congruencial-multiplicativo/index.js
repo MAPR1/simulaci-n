@@ -1,16 +1,17 @@
 
 window.onload = function () {
 	/* Semilla */
-	
+
 	var min = 200;
 	var max = 300;
 	var rango = ((max - min) / 2) - 1;
 	var semirandom;
-	semirandom = 2 * Math.floor(Math.random() * rango) +1 +min;
+	semirandom = 2 * Math.floor(Math.random() * rango) + 1 + min;
 
 	semilla.setAttribute("value", semirandom);
 
 	/* Semilla */
+
 
 
 	/* Modulo */
@@ -87,6 +88,7 @@ window.onload = function () {
 		celda.appendChild(txtcelda);
 		hilera.appendChild(celda);
 		celda = document.createElement("td");
+		
 		txtcelda = document.createTextNode(res);
 		celda.appendChild(txtcelda);
 		hilera.appendChild(celda);
@@ -94,7 +96,25 @@ window.onload = function () {
 		tabla.appendChild(tbody);
 		tabla.appendChild(tfoot);
 	}
+	function download(archivo, text) {
+		var element = document.createElement('a');
+
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', archivo);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+	}
+
+	document.getElementById("generar").addEventListener("click", function () {
+
+	var txtfile =	document.getElementsByTagName("td").value;
+		
+		download("hello.txt", `${txtfile}`);
+	}, false);
+
 }
-
-
-
