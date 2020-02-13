@@ -95,3 +95,6 @@ window.onload = function () {
 		tabla.appendChild(tfoot);
 	}
 }
+
+
+
