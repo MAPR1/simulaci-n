@@ -96,6 +96,12 @@ window.onload = function () {
 		tabla.appendChild(tbody);
 		tabla.appendChild(tfoot);
 	}
+<<<<<<< HEAD
+}
+
+
+
+=======
 	function download(archivo, text) {
 		var element = document.createElement('a');
 
@@ -118,3 +124,4 @@ window.onload = function () {
 	}, false);
 
 }
+>>>>>>> 818fce116526da7cc6ed29777eb77030265440b5
